@@ -19,6 +19,15 @@
         <div class="logo-mark">QH</div>
         <div class="logo-text">QuizHub</div>
       </div>
+      <nav class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#demo">Demo</a>
+        <a href="#about">About</a>
+      </nav>
+      <div class="nav-actions">
+        <button id="loginNavBtn" class="btn ghost">Log in</button>
+        <button id="signupNavBtn" class="btn primary">Sign up</button>
+      </div>
     </div>
   </header>
 
@@ -31,6 +40,12 @@
           a modern UI to keep learning fun and fast.</p>
         <div class="hero-actions">
           <button id="exploreBtn" class="btn primary">Explore QuizHub</button>
+          <button id="getStartedBtn" class="btn secondary">Get Started</button>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><strong id="statUsers">12,480+</strong><span>Active Learners</span></div>
+          <div class="stat"><strong id="statCats">6</strong><span>Categories</span></div>
+          <div class="stat"><strong id="statQs">150+</strong><span>Questions</span></div>
         </div>
       </div>
       <div class="hero-right">
@@ -39,6 +54,7 @@
             <div class="pill">📚</div>
             <h3>Start a Quiz</h3>
             <p>Pick a category and challenge yourself with timed quizzes and instant feedback.</p>
+            <button class="btn primary hero-cta" data-open-demo="quiz">Try Demo</button>
           </div>
         </div>
       </div>
@@ -47,30 +63,185 @@
     <section id="features" class="section">
       <h2 class="section-title">Features</h2>
       <div class="grid features-grid">
-        <article class="card glass feature" data-animate>
+        <article class="card glass feature" data-animate data-feature="quiz">
           <div class="icon">📚</div>
           <h4>Category-Based Quizzes</h4>
+          <p>Pick from 6 categories — each packed with curated questions and instant feedback.</p>
         </article>
-        <article class="card glass feature" data-animate>
+        <article class="card glass feature" data-animate data-feature="leaderboard">
           <div class="icon">🏆</div>
           <h4>Leaderboard</h4>
+          <p>Compete with friends and the community. Climb the ranks with every correct answer.</p>
         </article>
-        <article class="card glass feature" data-animate>
+        <article class="card glass feature" data-animate data-feature="results">
           <div class="icon">📊</div>
           <h4>Instant Results</h4>
+          <p>See your score, accuracy and topic-wise breakdown the moment you finish.</p>
         </article>
-        <article class="card glass feature" data-animate>
+        <article class="card glass feature" data-animate data-feature="profile">
           <div class="icon">👤</div>
           <h4>User Profile</h4>
+          <p>Track progress, saved quizzes, and personal stats — all in one place.</p>
         </article>
-        <article class="card glass feature" data-animate>
-          <div class="icon">⚡</div>
-          <h4>Fast Performance</h4>
+        <article class="card glass feature" data-animate data-feature="ai">
+          <div class="icon">🤖</div>
+          <h4>AI Tutor</h4>
+          <p>Ask anything. Get instant explanations, hints, and topic deep-dives.</p>
         </article>
-        <article class="card glass feature" data-animate>
-          <div class="icon">🎨</div>
-          <h4>Modern UI</h4>
+        <article class="card glass feature" data-animate data-feature="subscription">
+          <div class="icon">⭐</div>
+          <h4>Premium Plans</h4>
+          <p>Unlock unlimited quizzes, advanced analytics and ad-free learning.</p>
         </article>
+      </div>
+    </section>
+
+    <section id="demo" class="section demo">
+      <h2 class="section-title">Try It Now</h2>
+      <p class="section-sub">Tap a tab below — every feature is fully interactive.</p>
+
+      <div class="demo-shell glass">
+        <div class="demo-tabs" role="tablist">
+          <button class="demo-tab active" role="tab" data-tab="quiz">📚 Quiz</button>
+          <button class="demo-tab" role="tab" data-tab="leaderboard">🏆 Leaderboard</button>
+          <button class="demo-tab" role="tab" data-tab="profile">👤 Profile</button>
+          <button class="demo-tab" role="tab" data-tab="ai">🤖 AI Chat</button>
+          <button class="demo-tab" role="tab" data-tab="subscription">⭐ Plans</button>
+        </div>
+
+        <div class="demo-body">
+          <!-- QUIZ PANEL -->
+          <div class="demo-panel active" id="panel-quiz" role="tabpanel">
+            <div class="quiz-stage" id="quizStage">
+              <div class="quiz-start" id="quizStart">
+                <h3>Pick a Category</h3>
+                <div class="cat-grid" id="catGrid"></div>
+              </div>
+              <div class="quiz-play hidden" id="quizPlay">
+                <div class="quiz-header">
+                  <div class="quiz-meta">
+                    <span id="qCategory">Category</span>
+                    <span id="qProgress">Question 1/5</span>
+                  </div>
+                  <div class="quiz-bar"><div class="quiz-bar-fill" id="quizBarFill"></div></div>
+                </div>
+                <h3 class="quiz-question" id="qText">Question text</h3>
+                <div class="quiz-options" id="qOptions"></div>
+                <div class="quiz-feedback hidden" id="qFeedback"></div>
+                <div class="quiz-actions">
+                  <button class="btn secondary" id="qQuitBtn">Quit</button>
+                  <button class="btn primary hidden" id="qNextBtn">Next</button>
+                </div>
+              </div>
+              <div class="quiz-result hidden" id="quizResult">
+                <h3 id="resultTitle">Quiz Complete!</h3>
+                <div class="result-score" id="resultScore">0/0</div>
+                <p id="resultSummary">Nice work.</p>
+                <div class="result-actions">
+                  <button class="btn secondary" id="resultShareBtn">Share Result</button>
+                  <button class="btn primary" id="resultAgainBtn">Play Again</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- LEADERBOARD PANEL -->
+          <div class="demo-panel" id="panel-leaderboard" role="tabpanel">
+            <div class="lb-header">
+              <h3>Top Players</h3>
+              <div class="lb-filters">
+                <button class="chip active" data-lb-filter="all">All Time</button>
+                <button class="chip" data-lb-filter="week">This Week</button>
+                <button class="chip" data-lb-filter="today">Today</button>
+              </div>
+            </div>
+            <ol class="lb-list" id="lbList"></ol>
+            <p class="lb-note">Take a quiz to land on the board.</p>
+          </div>
+
+          <!-- PROFILE PANEL -->
+          <div class="demo-panel" id="panel-profile" role="tabpanel">
+            <div class="profile-card" id="profileCard">
+              <div class="profile-avatar" id="profileAvatar">?</div>
+              <div class="profile-info">
+                <h3 id="profileName">Guest Learner</h3>
+                <p id="profileEmail">Sign in to sync your stats across devices.</p>
+              </div>
+            </div>
+            <div class="profile-stats">
+              <div class="pstat"><strong id="pstatQuizzes">0</strong><span>Quizzes Taken</span></div>
+              <div class="pstat"><strong id="pstatAcc">0%</strong><span>Avg Accuracy</span></div>
+              <div class="pstat"><strong id="pstatBest">0</strong><span>Best Score</span></div>
+              <div class="pstat"><strong id="pstatStreak">0</strong><span>Day Streak</span></div>
+            </div>
+            <div class="profile-actions">
+              <button class="btn primary" id="profileEditBtn">Edit Profile</button>
+              <button class="btn secondary" id="profileResetBtn">Reset Progress</button>
+            </div>
+          </div>
+
+          <!-- AI CHAT PANEL -->
+          <div class="demo-panel" id="panel-ai" role="tabpanel">
+            <div class="ai-header">
+              <div class="ai-dot"></div>
+              <div>
+                <h3>QuizHub AI Tutor</h3>
+                <small>Online · answers instantly</small>
+              </div>
+            </div>
+            <div class="ai-log" id="aiLog">
+              <div class="ai-msg bot">
+                <div class="ai-bubble">Hi! I'm your AI tutor. Ask me anything about a quiz topic, or type <strong>hint</strong> while a quiz is active.</div>
+              </div>
+            </div>
+            <form class="ai-input" id="aiForm">
+              <input type="text" id="aiInput" placeholder="Ask me anything..." autocomplete="off">
+              <button type="submit" class="btn primary">Send</button>
+            </form>
+          </div>
+
+          <!-- SUBSCRIPTION PANEL -->
+          <div class="demo-panel" id="panel-subscription" role="tabpanel">
+            <div class="sub-intro">
+              <h3>Choose Your Plan</h3>
+              <p>Unlock deeper learning with premium tools.</p>
+            </div>
+            <div class="sub-grid">
+              <div class="sub-card">
+                <h4>Free</h4>
+                <div class="sub-price">$0<span>/mo</span></div>
+                <ul>
+                  <li>5 quizzes / day</li>
+                  <li>Basic categories</li>
+                  <li>Standard leaderboard</li>
+                </ul>
+                <button class="btn secondary sub-btn" data-plan="free">Current</button>
+              </div>
+              <div class="sub-card featured">
+                <div class="sub-badge">Most Popular</div>
+                <h4>Pro</h4>
+                <div class="sub-price">$4.99<span>/mo</span></div>
+                <ul>
+                  <li>Unlimited quizzes</li>
+                  <li>All categories</li>
+                  <li>Advanced analytics</li>
+                  <li>No ads</li>
+                </ul>
+                <button class="btn primary sub-btn" data-plan="pro">Upgrade</button>
+              </div>
+              <div class="sub-card">
+                <h4>Team</h4>
+                <div class="sub-price">$12<span>/mo</span></div>
+                <ul>
+                  <li>Everything in Pro</li>
+                  <li>Team leaderboards</li>
+                  <li>Admin controls</li>
+                </ul>
+                <button class="btn secondary sub-btn" data-plan="team">Choose</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -101,7 +272,7 @@
     <section id="cta" class="section cta">
       <div class="cta-inner glass">
         <h2>Ready to Test Your Knowledge?</h2>
-        <button id="getStartedBtn" class="btn secondary">Get Started</button>
+        <button id="ctaSignupBtn" class="btn primary">Create Free Account</button>
       </div>
     </section>
   </main>
@@ -110,6 +281,84 @@
     <div>QuizHub © 2026</div>
     <div>Developed by Muhammad Hossain</div>
   </footer>
+
+  <!-- FEATURE MODAL -->
+  <div class="modal hidden" id="featureModal" role="dialog" aria-modal="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-content glass">
+      <button class="modal-close" data-close-modal aria-label="Close">×</button>
+      <div class="modal-icon" id="featureIcon">✨</div>
+      <h3 id="featureTitle">Feature</h3>
+      <p id="featureDesc">Description</p>
+      <ul class="feature-bullets" id="featureBullets"></ul>
+      <button class="btn primary" id="featureTryBtn">Try It Now</button>
+    </div>
+  </div>
+
+  <!-- AUTH MODAL -->
+  <div class="modal hidden" id="authModal" role="dialog" aria-modal="true">
+    <div class="modal-backdrop" data-close-auth></div>
+    <div class="modal-content glass auth-modal">
+      <button class="modal-close" data-close-auth aria-label="Close">×</button>
+      <div class="auth-tabs">
+        <button class="auth-tab active" data-auth-tab="login">Log in</button>
+        <button class="auth-tab" data-auth-tab="signup">Sign up</button>
+      </div>
+
+      <form class="auth-form active" id="loginForm" data-auth-form="login">
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" required placeholder="you@example.com">
+        </label>
+        <label>
+          <span>Password</span>
+          <input type="password" name="password" required minlength="6" placeholder="At least 6 characters">
+        </label>
+        <button class="btn primary" type="submit">Log in</button>
+        <p class="auth-msg" id="loginMsg"></p>
+      </form>
+
+      <form class="auth-form" id="signupForm" data-auth-form="signup">
+        <label>
+          <span>Name</span>
+          <input type="text" name="name" required minlength="2" placeholder="Your name">
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" required placeholder="you@example.com">
+        </label>
+        <label>
+          <span>Password</span>
+          <input type="password" name="password" required minlength="6" placeholder="At least 6 characters">
+        </label>
+        <button class="btn primary" type="submit">Create account</button>
+        <p class="auth-msg" id="signupMsg"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- PROFILE EDIT MODAL -->
+  <div class="modal hidden" id="profileEditModal" role="dialog" aria-modal="true">
+    <div class="modal-backdrop" data-close-profile></div>
+    <div class="modal-content glass">
+      <button class="modal-close" data-close-profile aria-label="Close">×</button>
+      <h3>Edit Profile</h3>
+      <form id="profileEditForm">
+        <label>
+          <span>Display name</span>
+          <input type="text" name="name" required minlength="2" maxlength="30">
+        </label>
+        <label>
+          <span>Avatar emoji</span>
+          <input type="text" name="avatar" maxlength="2" placeholder="🦊">
+        </label>
+        <button class="btn primary" type="submit">Save</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast hidden" id="toast"></div>
 
   <script src="script.js"></script>
 </body>
