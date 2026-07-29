@@ -1,0 +1,156 @@
+{
+  "info": {
+    "name": "BDApps API PHP",
+    "description": "API collection for testing BDApps integration endpoints (OTP, Subscription, etc.) in Postman or Insomnia.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Check Subscription",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "user_mobile",
+              "value": "01812345678",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{base_url}}/check_subscription.php",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "check_subscription.php"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Send OTP",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "user_mobile",
+              "value": "01812345678",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{base_url}}/send_otp.php",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "send_otp.php"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Verify OTP",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "Otp",
+              "value": "123456",
+              "type": "text"
+            },
+            {
+              "key": "referenceNo",
+              "value": "REF123456789",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{base_url}}/verify_otp.php",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "verify_otp.php"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Unsubscribe",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "user_mobile",
+              "value": "01812345678",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{base_url}}/unsubscribe.php",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "unsubscribe.php"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Subscription Listener (Mock)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"timeStamp\": \"2026-07-13T12:00:00Z\",\n  \"status\": \"REGISTERED\",\n  \"applicationId\": \"APP_123456\",\n  \"subscriberId\": \"tel:8801812345678\",\n  \"frequency\": \"daily\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/subscription_listener.php",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "subscription_listener.php"
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost/bdapps_api_php",
+      "type": "string"
+    }
+  ]
+}

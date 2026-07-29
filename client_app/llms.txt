@@ -1,0 +1,30 @@
+# Quiz App
+
+This is a Flutter-based quiz application utilizing Firebase for backend services.
+
+## Tech Stack
+- **Framework**: Flutter (Dart)
+- **State Management**: `provider`
+- **Routing**: `go_router`
+- **Local Storage**: `hive`
+- **Backend/Services**: Firebase (Auth, Firestore, Storage)
+- **Networking**: `http` / `dio`
+
+## Architecture & Structure
+The project follows a standard layered architecture with the following key directories in `lib/`:
+- `models/`: Data classes representing business entities.
+- `providers/`: State management classes extending `ChangeNotifier`.
+- `pages/`: UI screens (often corresponding to routes).
+- `widgets/`: Reusable UI components.
+- `services/`: Wrappers for external APIs, Firebase interactions, and local storage.
+- `utils/`: Helpers, constants, and theme utilities.
+
+## Core Files
+- `lib/main.dart`: Application entry point.
+- `lib/app_route.dart`: Global routing configuration using `go_router`.
+- `lib/firebase_options.dart`: Auto-generated Firebase initialization configuration.
+
+## Developer Rules
+- All new routes must be registered in `lib/app_route.dart`.
+- State must be managed via `Provider` in the `providers/` directory; keep UI logic separate from business logic.
+- Prefer `///` for writing Dartdoc comments for public APIs, classes, and methods.
