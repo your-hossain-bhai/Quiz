@@ -141,7 +141,7 @@ This project is licensed under the MIT License.
 - Flutter Developer
 - CSE Student at International Islamic University Chittagong (IIUC)
 
-GitHub: https://github.com/yourusername
+GitHub: https://github.com/your-hossain-bhai
 
 ---
 
