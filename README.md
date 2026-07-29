@@ -16,15 +16,6 @@ A modern and interactive Quiz Application built with **Flutter**, designed to pr
 - 📱 Responsive UI
 - 🎨 Modern Material Design
 
-## 📸 Screenshots
-
-> Add screenshots of your app here.
-
-| Home | Categories | Quiz | Result |
-|------|------------|-------|--------|
-| Screenshot | Screenshot | Screenshot | Screenshot |
-
----
 
 ## 🛠️ Built With
 
