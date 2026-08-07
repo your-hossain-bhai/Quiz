@@ -1,0 +1,8 @@
+{
+  "version": "1.0.0+1",
+  "url": "downloads/quizhub-1.0.0.apk",
+  "filename": "quizhub-1.0.0.apk",
+  "size": "—",
+  "releaseUrl": "https://github.com/your-hossain-bhai/Quiz/releases/latest",
+  "notes": "Drop a built APK into downloads/quizhub-1.0.0.apk (or update url above to a hosted release). The landing page will pick it up automatically."
+}

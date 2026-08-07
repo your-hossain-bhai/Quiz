@@ -3,362 +3,387 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="QuizHub — Learn. Challenge. Improve. A Flutter-based quiz app.">
-  <title>QuizHub — Learn. Challenge. Improve.</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="QuizHub — A Flutter-based quiz app with BDApps carrier billing. Subscribe, download the APK, and start learning in minutes.">
+  <title>QuizHub · Subscribe. Download. Learn.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <div class="page-bg"></div>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-  <header class="nav">
-    <div class="nav-inner">
-      <div class="logo">
-        <div class="logo-mark">QH</div>
-        <div class="logo-text">QuizHub</div>
-      </div>
-      <nav class="nav-links">
+  <div class="bg-gradient" aria-hidden="true"></div>
+  <div class="bg-blob bg-blob-a" aria-hidden="true"></div>
+  <div class="bg-blob bg-blob-b" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="QuizHub home">
+        <span class="brand-mark" aria-hidden="true">Q</span>
+        <span class="brand-text">
+          <strong>QuizHub</strong>
+          <small>BDApps-powered quiz prep</small>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
         <a href="#features">Features</a>
-        <a href="#demo">Demo</a>
-        <a href="#about">About</a>
+        <a href="#download">Download</a>
+        <a href="#subscribe">Subscribe</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
       </nav>
+
       <div class="nav-actions">
-        <button id="loginNavBtn" class="btn ghost">Log in</button>
-        <button id="signupNavBtn" class="btn primary">Sign up</button>
+        <button class="btn btn-ghost" type="button" data-action="open-login" aria-haspopup="dialog">Log in</button>
+        <button class="btn btn-primary" type="button" data-action="open-subscribe" aria-haspopup="dialog">Subscribe</button>
+        <button class="nav-toggle" type="button" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu" hidden>
+      <a href="#features">Features</a>
+      <a href="#download">Download</a>
+      <a href="#subscribe">Subscribe</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
     </div>
   </header>
 
-  <main class="container">
-    <section id="hero" class="hero section">
-      <div class="hero-left">
-        <h1 class="title">QuizHub</h1>
-        <p class="tagline">Learn. Challenge. Improve.</p>
-        <p class="lead">Engaging, category-based quizzes built with Flutter, offering instant scoring, leaderboards, and
-          a modern UI to keep learning fun and fast.</p>
-        <div class="hero-actions">
-          <button id="exploreBtn" class="btn primary">Explore QuizHub</button>
-          <button id="getStartedBtn" class="btn secondary">Get Started</button>
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero section" id="top">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <span class="eyebrow">BDApps · Carrier Billing · 2 BDT/day</span>
+          <h1 class="hero-title">
+            Subscribe, download, and start<br>
+            <span class="grad">learning in minutes.</span>
+          </h1>
+          <p class="hero-sub">
+            QuizHub is a Flutter-powered quiz app for IQ prep. Subscribe with a Robi or Airtel number on this page,
+            download the Android APK, and keep your progress synced across devices.
+          </p>
+          <div class="hero-cta">
+            <button class="btn btn-primary btn-lg" type="button" data-action="open-subscribe">
+              <span class="btn-icon" aria-hidden="true">★</span> Subscribe with BDApps
+            </button>
+            <a class="btn btn-secondary btn-lg" href="#download" id="downloadScrollBtn">
+              <span class="btn-icon" aria-hidden="true">↓</span> Download APK
+            </a>
+          </div>
+          <ul class="hero-meta" role="list">
+            <li><strong>2 BDT</strong><span>per day</span></li>
+            <li><strong>Robi</strong><span>supported</span></li>
+            <li><strong>Airtel</strong><span>supported</span></li>
+            <li><strong>Android</strong><span>APK included</span></li>
+          </ul>
         </div>
-        <div class="hero-stats">
-          <div class="stat"><strong id="statUsers">12,480+</strong><span>Active Learners</span></div>
-          <div class="stat"><strong id="statCats">6</strong><span>Categories</span></div>
-          <div class="stat"><strong id="statQs">150+</strong><span>Questions</span></div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="phone">
+            <div class="phone-screen">
+              <div class="phone-bar"></div>
+              <div class="phone-app">
+                <div class="phone-cat">
+                  <span class="emoji">🧠</span>
+                  <span>General Knowledge</span>
+                </div>
+                <div class="phone-q">
+                  What is the largest ocean on Earth?
+                </div>
+                <div class="phone-opts">
+                  <button class="phone-opt">Atlantic</button>
+                  <button class="phone-opt correct">Pacific</button>
+                  <button class="phone-opt">Indian</button>
+                  <button class="phone-opt">Arctic</button>
+                </div>
+                <div class="phone-foot">
+                  <span>Question 1 of 5</span>
+                  <span class="phone-score">Score 1</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="hero-right">
-        <div class="card glass hero-card" aria-hidden="true">
-          <div class="card-inner">
-            <div class="pill">📚</div>
-            <h3>Start a Quiz</h3>
-            <p>Pick a category and challenge yourself with timed quizzes and instant feedback.</p>
-            <button class="btn primary hero-cta" data-open-demo="quiz">Try Demo</button>
-          </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">// What's inside</span>
+          <h2>Everything you need to prep for Day&nbsp;1 IQ</h2>
+          <p class="section-sub">
+            Verbal, non-verbal, and analytical questions with instant scoring, leaderboards, and a clean Flutter UI.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">📚</div>
+            <h3>Category-Based Quizzes</h3>
+            <p>Pick from 6 categories — General Knowledge, Science, History, Geography, Sports, and Tech.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">🏆</div>
+            <h3>Live Leaderboard</h3>
+            <p>Compete with the community. Filter by Today, This Week, or All Time to track your rank.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">📊</div>
+            <h3>Instant Results</h3>
+            <p>Get a clean breakdown of score, accuracy, and topic-wise stats the moment you finish a quiz.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">👤</div>
+            <h3>User Profile</h3>
+            <p>Sync your progress across devices with the same BDApps mobile number used to subscribe.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">🤖</div>
+            <h3>AI Study Coach</h3>
+            <p>Ask anything. Get instant explanations, hints, and topic deep-dives tailored to your level.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">⭐</div>
+            <h3>Premium Plans</h3>
+            <p>Unlock unlimited quizzes, advanced analytics, and an ad-free experience.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="features" class="section">
-      <h2 class="section-title">Features</h2>
-      <div class="grid features-grid">
-        <article class="card glass feature" data-animate data-feature="quiz">
-          <div class="icon">📚</div>
-          <h4>Category-Based Quizzes</h4>
-          <p>Pick from 6 categories — each packed with curated questions and instant feedback.</p>
-        </article>
-        <article class="card glass feature" data-animate data-feature="leaderboard">
-          <div class="icon">🏆</div>
-          <h4>Leaderboard</h4>
-          <p>Compete with friends and the community. Climb the ranks with every correct answer.</p>
-        </article>
-        <article class="card glass feature" data-animate data-feature="results">
-          <div class="icon">📊</div>
-          <h4>Instant Results</h4>
-          <p>See your score, accuracy and topic-wise breakdown the moment you finish.</p>
-        </article>
-        <article class="card glass feature" data-animate data-feature="profile">
-          <div class="icon">👤</div>
-          <h4>User Profile</h4>
-          <p>Track progress, saved quizzes, and personal stats — all in one place.</p>
-        </article>
-        <article class="card glass feature" data-animate data-feature="ai">
-          <div class="icon">🤖</div>
-          <h4>AI Tutor</h4>
-          <p>Ask anything. Get instant explanations, hints, and topic deep-dives.</p>
-        </article>
-        <article class="card glass feature" data-animate data-feature="subscription">
-          <div class="icon">⭐</div>
-          <h4>Premium Plans</h4>
-          <p>Unlock unlimited quizzes, advanced analytics and ad-free learning.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="demo" class="section demo">
-      <h2 class="section-title">Try It Now</h2>
-      <p class="section-sub">Tap a tab below — every feature is fully interactive.</p>
-
-      <div class="demo-shell glass">
-        <div class="demo-tabs" role="tablist">
-          <button class="demo-tab active" role="tab" data-tab="quiz">📚 Quiz</button>
-          <button class="demo-tab" role="tab" data-tab="leaderboard">🏆 Leaderboard</button>
-          <button class="demo-tab" role="tab" data-tab="profile">👤 Profile</button>
-          <button class="demo-tab" role="tab" data-tab="ai">🤖 AI Chat</button>
-          <button class="demo-tab" role="tab" data-tab="subscription">⭐ Plans</button>
+    <!-- DOWNLOAD -->
+    <section class="section section-download" id="download">
+      <div class="container download-inner">
+        <div class="download-copy">
+          <span class="kicker">// Step 1 — Download</span>
+          <h2>Get the QuizHub Android APK</h2>
+          <p>
+            The APK is bundled with this site. Subscribe first so the app can validate your mobile number, then install
+            and log in with the same number.
+          </p>
+          <ul class="check-list" role="list">
+            <li>Direct download — no app store required</li>
+            <li>Same APK as the one tested with BDApps</li>
+            <li>Works on Android 8.0 and above</li>
+          </ul>
         </div>
 
-        <div class="demo-body">
-          <!-- QUIZ PANEL -->
-          <div class="demo-panel active" id="panel-quiz" role="tabpanel">
-            <div class="quiz-stage" id="quizStage">
-              <div class="quiz-start" id="quizStart">
-                <h3>Pick a Category</h3>
-                <div class="cat-grid" id="catGrid"></div>
-              </div>
-              <div class="quiz-play hidden" id="quizPlay">
-                <div class="quiz-header">
-                  <div class="quiz-meta">
-                    <span id="qCategory">Category</span>
-                    <span id="qProgress">Question 1/5</span>
-                  </div>
-                  <div class="quiz-bar"><div class="quiz-bar-fill" id="quizBarFill"></div></div>
-                </div>
-                <h3 class="quiz-question" id="qText">Question text</h3>
-                <div class="quiz-options" id="qOptions"></div>
-                <div class="quiz-feedback hidden" id="qFeedback"></div>
-                <div class="quiz-actions">
-                  <button class="btn secondary" id="qQuitBtn">Quit</button>
-                  <button class="btn primary hidden" id="qNextBtn">Next</button>
-                </div>
-              </div>
-              <div class="quiz-result hidden" id="quizResult">
-                <h3 id="resultTitle">Quiz Complete!</h3>
-                <div class="result-score" id="resultScore">0/0</div>
-                <p id="resultSummary">Nice work.</p>
-                <div class="result-actions">
-                  <button class="btn secondary" id="resultShareBtn">Share Result</button>
-                  <button class="btn primary" id="resultAgainBtn">Play Again</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- LEADERBOARD PANEL -->
-          <div class="demo-panel" id="panel-leaderboard" role="tabpanel">
-            <div class="lb-header">
-              <h3>Top Players</h3>
-              <div class="lb-filters">
-                <button class="chip active" data-lb-filter="all">All Time</button>
-                <button class="chip" data-lb-filter="week">This Week</button>
-                <button class="chip" data-lb-filter="today">Today</button>
-              </div>
-            </div>
-            <ol class="lb-list" id="lbList"></ol>
-            <p class="lb-note">Take a quiz to land on the board.</p>
-          </div>
-
-          <!-- PROFILE PANEL -->
-          <div class="demo-panel" id="panel-profile" role="tabpanel">
-            <div class="profile-card" id="profileCard">
-              <div class="profile-avatar" id="profileAvatar">?</div>
-              <div class="profile-info">
-                <h3 id="profileName">Guest Learner</h3>
-                <p id="profileEmail">Sign in to sync your stats across devices.</p>
-              </div>
-            </div>
-            <div class="profile-stats">
-              <div class="pstat"><strong id="pstatQuizzes">0</strong><span>Quizzes Taken</span></div>
-              <div class="pstat"><strong id="pstatAcc">0%</strong><span>Avg Accuracy</span></div>
-              <div class="pstat"><strong id="pstatBest">0</strong><span>Best Score</span></div>
-              <div class="pstat"><strong id="pstatStreak">0</strong><span>Day Streak</span></div>
-            </div>
-            <div class="profile-actions">
-              <button class="btn primary" id="profileEditBtn">Edit Profile</button>
-              <button class="btn secondary" id="profileResetBtn">Reset Progress</button>
-            </div>
-          </div>
-
-          <!-- AI CHAT PANEL -->
-          <div class="demo-panel" id="panel-ai" role="tabpanel">
-            <div class="ai-header">
-              <div class="ai-dot"></div>
+        <div class="download-card">
+          <div class="download-art" aria-hidden="true">
+            <div class="apk-pill">
+              <span class="apk-icon">⬇</span>
               <div>
-                <h3>QuizHub AI Tutor</h3>
-                <small>Online · answers instantly</small>
+                <strong>quizhub.apk</strong>
+                <small id="apkSizeLabel">Latest build</small>
               </div>
             </div>
-            <div class="ai-log" id="aiLog">
-              <div class="ai-msg bot">
-                <div class="ai-bubble">Hi! I'm your AI tutor. Ask me anything about a quiz topic, or type <strong>hint</strong> while a quiz is active.</div>
-              </div>
-            </div>
-            <form class="ai-input" id="aiForm">
-              <input type="text" id="aiInput" placeholder="Ask me anything..." autocomplete="off">
-              <button type="submit" class="btn primary">Send</button>
+          </div>
+          <button id="downloadApkBtn" class="btn btn-primary btn-lg btn-block" type="button">
+            <span class="btn-icon" aria-hidden="true">⬇</span> Download APK
+          </button>
+          <a id="apkStatusLink" class="download-note" href="#" hidden></a>
+          <p class="download-hint">
+            Don't have a built APK yet? Run
+            <code>flutter build apk --release</code> in the <code>client_app/</code> folder.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUBSCRIBE -->
+    <section class="section section-subscribe" id="subscribe">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">// Step 2 — Subscribe</span>
+          <h2>Activate QuizHub with carrier billing</h2>
+          <p class="section-sub">
+            Enter your Robi or Airtel mobile number to check your subscription, send an OTP, or unsubscribe.
+          </p>
+        </div>
+
+        <div class="subscribe-card card">
+          <div class="tab-row" role="tablist">
+            <button class="tab-btn is-active" role="tab" aria-selected="true" data-tab="check">Check</button>
+            <button class="tab-btn" role="tab" aria-selected="false" data-tab="subscribe">Subscribe</button>
+            <button class="tab-btn" role="tab" aria-selected="false" data-tab="unsubscribe">Unsubscribe</button>
+          </div>
+
+          <!-- CHECK PANEL -->
+          <div class="panel is-active" data-panel="check" role="tabpanel">
+            <form id="checkForm" class="stack-form" novalidate>
+              <label class="field">
+                <span class="field-label">Mobile number</span>
+                <div class="input-with-prefix">
+                  <span class="prefix">+88</span>
+                  <input id="checkMobile" name="user_mobile" type="tel" inputmode="tel"
+                    placeholder="01XXXXXXXXX" autocomplete="tel" required>
+                </div>
+              </label>
+              <button class="btn btn-primary btn-block" type="submit">Check subscription</button>
+              <div class="result-chip" id="checkResult" role="status" aria-live="polite"></div>
             </form>
           </div>
 
-          <!-- SUBSCRIPTION PANEL -->
-          <div class="demo-panel" id="panel-subscription" role="tabpanel">
-            <div class="sub-intro">
-              <h3>Choose Your Plan</h3>
-              <p>Unlock deeper learning with premium tools.</p>
-            </div>
-            <div class="sub-grid">
-              <div class="sub-card">
-                <h4>Free</h4>
-                <div class="sub-price">$0<span>/mo</span></div>
-                <ul>
-                  <li>5 quizzes / day</li>
-                  <li>Basic categories</li>
-                  <li>Standard leaderboard</li>
-                </ul>
-                <button class="btn secondary sub-btn" data-plan="free">Current</button>
-              </div>
-              <div class="sub-card featured">
-                <div class="sub-badge">Most Popular</div>
-                <h4>Pro</h4>
-                <div class="sub-price">$4.99<span>/mo</span></div>
-                <ul>
-                  <li>Unlimited quizzes</li>
-                  <li>All categories</li>
-                  <li>Advanced analytics</li>
-                  <li>No ads</li>
-                </ul>
-                <button class="btn primary sub-btn" data-plan="pro">Upgrade</button>
-              </div>
-              <div class="sub-card">
-                <h4>Team</h4>
-                <div class="sub-price">$12<span>/mo</span></div>
-                <ul>
-                  <li>Everything in Pro</li>
-                  <li>Team leaderboards</li>
-                  <li>Admin controls</li>
-                </ul>
-                <button class="btn secondary sub-btn" data-plan="team">Choose</button>
-              </div>
-            </div>
+          <!-- SUBSCRIBE PANEL -->
+          <div class="panel" data-panel="subscribe" role="tabpanel" hidden>
+            <form id="subscribeForm" class="stack-form" novalidate>
+              <label class="field">
+                <span class="field-label">Mobile number</span>
+                <div class="input-with-prefix">
+                  <span class="prefix">+88</span>
+                  <input id="subscribeMobile" name="user_mobile" type="tel" inputmode="tel"
+                    placeholder="01XXXXXXXXX" autocomplete="tel" required>
+                </div>
+              </label>
+              <button class="btn btn-secondary btn-block" type="button" id="sendOtpBtn">Send OTP</button>
+
+              <label class="field" id="otpField" hidden>
+                <span class="field-label">One-time password</span>
+                <input id="otpInput" name="otp" type="text" inputmode="numeric" placeholder="Enter OTP" maxlength="8">
+              </label>
+              <button class="btn btn-primary btn-block" type="submit" id="verifyOtpBtn" hidden>Verify & activate</button>
+              <div class="result-chip" id="subscribeResult" role="status" aria-live="polite"></div>
+            </form>
+          </div>
+
+          <!-- UNSUBSCRIBE PANEL -->
+          <div class="panel" data-panel="unsubscribe" role="tabpanel" hidden>
+            <form id="unsubscribeForm" class="stack-form" novalidate>
+              <label class="field">
+                <span class="field-label">Mobile number</span>
+                <div class="input-with-prefix">
+                  <span class="prefix">+88</span>
+                  <input id="unsubMobile" name="user_mobile" type="tel" inputmode="tel"
+                    placeholder="01XXXXXXXXX" autocomplete="tel" required>
+                </div>
+              </label>
+              <button class="btn btn-danger btn-block" type="submit">Unsubscribe</button>
+              <div class="result-chip" id="unsubscribeResult" role="status" aria-live="polite"></div>
+            </form>
+          </div>
+
+          <p class="subscribe-note">
+            Powered by <strong>BDApps</strong> — Robi &amp; Airtel only. Standard carrier rates apply.
+            <span id="apiBaseLabel" class="api-base"></span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">// FAQ</span>
+          <h2>Common questions</h2>
+        </div>
+
+        <div class="faq-list">
+          <details class="card faq" open>
+            <summary>How does the 2 BDT/day subscription work?</summary>
+            <p>Enter a Robi or Airtel mobile number, request an OTP, and confirm. QuizHub validates against the BDApps
+              carrier billing API and unlocks the app on the same device.</p>
+          </details>
+          <details class="card faq">
+            <summary>Why is the Day 1 IQ critical?</summary>
+            <p>Passing the Day 1 IQ test is the first hurdle for many engineering roles in Bangladesh. QuizHub mirrors
+              the verbal and non-verbal question styles you'll see on test day.</p>
+          </details>
+          <details class="card faq">
+            <summary>How do I sync my subscription in the APK?</summary>
+            <p>Use the same mobile number and BDApps login flow inside the app. The app hits the same PHP backend to
+              verify your subscription before unlocking features.</p>
+          </details>
+          <details class="card faq">
+            <summary>What if my APK download button doesn't work?</summary>
+            <p>If the APK isn't yet attached, the button will open a panel with build instructions for
+              <code>client_app/</code>. Subscribe still works regardless of APK availability.</p>
+          </details>
+          <details class="card faq">
+            <summary>Is this app safe?</summary>
+            <p>Yes. The flow uses BDApps carrier billing and mobile verification. No extra payment path is introduced
+              outside the subscription provider.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT / FOOTER CTA -->
+    <section class="section section-cta" id="contact">
+      <div class="container">
+        <div class="cta-card card">
+          <div>
+            <span class="kicker">// Ready when you are</span>
+            <h2>Two steps. One minute. Start learning.</h2>
+            <p>Subscribe first, then install the APK. Your progress follows your mobile number.</p>
+          </div>
+          <div class="cta-actions">
+            <button class="btn btn-primary btn-lg" type="button" data-action="open-subscribe">Subscribe</button>
+            <a class="btn btn-secondary btn-lg" href="#download">Download APK</a>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section id="about" class="section about">
-      <h2 class="section-title">About</h2>
-      <p>QuizHub is a Flutter-based quiz application that makes learning engaging through category-based quizzes,
-        instant scoring, and a clean interface designed for both casual learners and competitive users.</p>
-    </section>
-
-    <section id="tech" class="section tech">
-      <h2 class="section-title">Tech Stack</h2>
-      <div class="grid tech-grid">
-        <div class="card glass tech-card" data-animate>
-          <div class="tech-name">Flutter</div>
-        </div>
-        <div class="card glass tech-card" data-animate>
-          <div class="tech-name">Dart</div>
-        </div>
-        <div class="card glass tech-card" data-animate>
-          <div class="tech-name">Provider</div>
-        </div>
-        <div class="card glass tech-card" data-animate>
-          <div class="tech-name">Material Design</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="cta" class="section cta">
-      <div class="cta-inner glass">
-        <h2>Ready to Test Your Knowledge?</h2>
-        <button id="ctaSignupBtn" class="btn primary">Create Free Account</button>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div>QuizHub © 2026</div>
-    <div>Developed by Muhammad Hossain</div>
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="brand-mark" aria-hidden="true">Q</span>
+        <div>
+          <strong>QuizHub</strong>
+          <p>Built with Flutter. Powered by BDApps carrier billing.</p>
+        </div>
+      </div>
+      <div class="footer-links" aria-label="Footer">
+        <a href="#features">Features</a>
+        <a href="#download">Download</a>
+        <a href="#subscribe">Subscribe</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="footer-meta">
+        <p id="footerContact">Contact: configure your BDApps support number in the backend</p>
+        <p class="muted">© 2026 QuizHub · Developed by Muhammad Hossain</p>
+      </div>
+    </div>
   </footer>
 
-  <!-- FEATURE MODAL -->
-  <div class="modal hidden" id="featureModal" role="dialog" aria-modal="true">
-    <div class="modal-backdrop" data-close-modal></div>
-    <div class="modal-content glass">
-      <button class="modal-close" data-close-modal aria-label="Close">×</button>
-      <div class="modal-icon" id="featureIcon">✨</div>
-      <h3 id="featureTitle">Feature</h3>
-      <p id="featureDesc">Description</p>
-      <ul class="feature-bullets" id="featureBullets"></ul>
-      <button class="btn primary" id="featureTryBtn">Try It Now</button>
-    </div>
-  </div>
+  <!-- LOGIN MODAL -->
+  <div class="modal" id="loginModal" role="dialog" aria-modal="true" aria-labelledby="loginTitle" hidden>
+    <div class="modal-backdrop" data-close-modal="loginModal"></div>
+    <div class="modal-card card">
+      <button class="modal-close" type="button" data-close-modal="loginModal" aria-label="Close">×</button>
+      <span class="kicker">// Log in</span>
+      <h3 id="loginTitle">Welcome back</h3>
+      <p class="modal-sub">Log in with the email tied to your QuizHub account.</p>
 
-  <!-- AUTH MODAL -->
-  <div class="modal hidden" id="authModal" role="dialog" aria-modal="true">
-    <div class="modal-backdrop" data-close-auth></div>
-    <div class="modal-content glass auth-modal">
-      <button class="modal-close" data-close-auth aria-label="Close">×</button>
-      <div class="auth-tabs">
-        <button class="auth-tab active" data-auth-tab="login">Log in</button>
-        <button class="auth-tab" data-auth-tab="signup">Sign up</button>
-      </div>
-
-      <form class="auth-form active" id="loginForm" data-auth-form="login">
-        <label>
-          <span>Email</span>
-          <input type="email" name="email" required placeholder="you@example.com">
+      <form id="loginForm" class="stack-form" novalidate>
+        <label class="field">
+          <span class="field-label">Email</span>
+          <input type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
         </label>
-        <label>
-          <span>Password</span>
-          <input type="password" name="password" required minlength="6" placeholder="At least 6 characters">
+        <label class="field">
+          <span class="field-label">Password</span>
+          <input type="password" name="password" placeholder="At least 6 characters" minlength="6" required>
         </label>
-        <button class="btn primary" type="submit">Log in</button>
-        <p class="auth-msg" id="loginMsg"></p>
-      </form>
-
-      <form class="auth-form" id="signupForm" data-auth-form="signup">
-        <label>
-          <span>Name</span>
-          <input type="text" name="name" required minlength="2" placeholder="Your name">
-        </label>
-        <label>
-          <span>Email</span>
-          <input type="email" name="email" required placeholder="you@example.com">
-        </label>
-        <label>
-          <span>Password</span>
-          <input type="password" name="password" required minlength="6" placeholder="At least 6 characters">
-        </label>
-        <button class="btn primary" type="submit">Create account</button>
-        <p class="auth-msg" id="signupMsg"></p>
-      </form>
-    </div>
-  </div>
-
-  <!-- PROFILE EDIT MODAL -->
-  <div class="modal hidden" id="profileEditModal" role="dialog" aria-modal="true">
-    <div class="modal-backdrop" data-close-profile></div>
-    <div class="modal-content glass">
-      <button class="modal-close" data-close-profile aria-label="Close">×</button>
-      <h3>Edit Profile</h3>
-      <form id="profileEditForm">
-        <label>
-          <span>Display name</span>
-          <input type="text" name="name" required minlength="2" maxlength="30">
-        </label>
-        <label>
-          <span>Avatar emoji</span>
-          <input type="text" name="avatar" maxlength="2" placeholder="🦊">
-        </label>
-        <button class="btn primary" type="submit">Save</button>
+        <button class="btn btn-primary btn-block" type="submit">Log in</button>
+        <p class="result-chip" id="loginResult" role="status" aria-live="polite"></p>
       </form>
     </div>
   </div>
 
   <!-- TOAST -->
-  <div class="toast hidden" id="toast"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 
   <script src="script.js"></script>
 </body>
